@@ -1,0 +1,13 @@
+<h1>
+  <%= @post.title %>
+</h1>
+
+<div class="body">
+  <%= simple_format(@post.content) %>
+</div>
+
+<p>
+  <%= link_to "Back to Index", posts_path %>
+  <%= link_to "Edit Post", edit_post_path %>
+  <%= link_to "Delete Post", @post, method: :delete %>
+</p>
