@@ -2,19 +2,62 @@
 <html>
 <head>
   <title>Blog</title>
-  <%= stylesheet_link_tag    "application" %>
+  <%= stylesheet_link_tag "application" %>
   <%= javascript_include_tag "application" %>
   <%= csrf_meta_tags %>
+  <style type="text/css">
+    body {
+      padding-top: 60px;
+    }
+  </style>
+
 </head>
 <body>
 
-<% if flash[:notice] %>
-  <div class="flash notice">
-    <%= flash[:notice] %>
+<div class="topbar">
+  <div class="topbar-inner">
+    <div class="container-fluid">
+      <a class="brand" #href="#">Test Blog</a>
+      <ul class="nav">
+        <li class="active"><a href="http://localhost:3000/">Home</a></li>
+        <!--<li><a href="#about">About</a></li>-->
+        <!--<li><a href="#contact">Contact</a></li>-->
+      </ul>
+      <!--<p class="pull-right">Logged in as <a href="#">username</a></p>-->
+    </div>
   </div>
-<% end %>
+</div>
 
-<%= yield %>
+<div class="container-fluid">
+  <div class="sidebar">
+    <div class="well">
+      <h5>Some example</h5>
+      <ul>
+        <li><a href="http://localhost:3000/posts">Posts</a></li>
+        <li><a href="#">Link</a></li>
+        <li><a href="#">Link</a></li>
+        <li><a href="#">Link</a></li>
+      </ul>
+    </div>
+  </div>
+  <div class="content">
+    <% if flash[:notice] %>
+      <div class="flash notice">
+        <%= flash[:notice] %>
+      </div>
+    <% end %>
+
+    <%= yield %>
+
+    <footer>
+      <p>&copy; David 2011</p>
+    </footer>
+  </div>
+</div>
 
 </body>
 </html>
+
+
+
+
